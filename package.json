@@ -10,14 +10,16 @@
     "webpack": "node_modules/.bin/webpack"
   },
   "keywords": [],
-  "author": "Dave Schumaker <dave@dave.ly> (https://dave.ly)",
-  "license": "ISC",
+  "author": "Dave Schumaker",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
+    "babel-plugin-transform-class-properties": "^6.11.5",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
+    "clean-webpack-plugin": "^0.1.10",
     "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.8.0",
@@ -29,6 +31,11 @@
     "webpack-validator": "^2.2.7"
   },
   "dependencies": {
-    "react": "^15.3.0"
+    "deep-equal": "^1.0.1",
+    "lodash": "^4.14.2",
+    "mapbox-gl": "^0.21.0",
+    "qwest": "^4.4.5",
+    "react": "^15.3.0",
+    "react-mapbox-gl": "^0.9.1"
   }
 }

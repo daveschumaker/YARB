@@ -1,0 +1,25 @@
+$phone: 320px;
+$tablet: 768px;
+$desktop: 992px;
+$desktop-xl: 1200px;
+
+@mixin breakpoint($size) {
+    @if ($size==phone-and-up) {
+        @content;
+    }
+    @else if ($size==tablet-and-up) {
+        @media (min-width: $tablet) {
+            @content;
+        }
+    }
+    @else if ($size==desktop-and-up) {
+        @media (min-width: $desktop) {
+            @content;
+        }
+    }
+    @else if ($size==desktop-xl-and-up) {
+        @media (min-width: $desktop-xl) {
+            @content;
+        }
+    }
+}

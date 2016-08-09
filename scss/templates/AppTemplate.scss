@@ -1,0 +1,24 @@
+@import '../_reset.scss';       // Only needs to be included once right here
+@import '../_includes.scss';    // This should be included at top of every scss file.
+
+html, body {
+    font-size: 16px;
+    margin: 0px;
+    min-width: 320px;
+    padding: 0px;
+}
+
+.AppTemplate {
+    background: $white;
+    height: 100%;
+    width: 100%;
+    h1 {
+        font-size: 25px;
+        @include breakpoint(tablet-and-up) {
+            font-size: 35px;
+        }
+        @include breakpoint(desktop-and-up) {
+            font-size: 50px;
+        }
+    }
+}

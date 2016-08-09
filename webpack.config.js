@@ -1,3 +1,4 @@
+const CleanPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');    // Generates index.html
 const merge = require('webpack-merge');
 const path = require('path');
@@ -20,6 +21,7 @@ const common = {
         filename: '[name].js'
     },
     plugins: [
+        new CleanPlugin([PATHS.build]),
         new HtmlWebpackPlugin({
             title: 'YARB - Yet Another React Boilerplate',
             template: require('html-webpack-template'),
@@ -28,7 +30,7 @@ const common = {
     ],
     resolve: {
         root: path.join(__dirname),
-        extensions: ['', '.js', '.jsx'],
+        extensions: ['', '.js', '.jsx', '.scss'],
         alias: {
             'app': 'app',
             'config': 'config',
