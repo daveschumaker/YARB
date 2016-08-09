@@ -1,0 +1,30 @@
+{
+  "name": "YARB",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run webpack",
+    "start": "npm run webpack-dev-server",
+    "webpack": "node_modules/.bin/webpack",
+    "webpack-dev-server": "node_modules/.bin/webpack-dev-server"
+  },
+  "keywords": [],
+  "author": "Dave Schumaker <dave@dave.ly> (https://dave.ly)",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "css-loader": "^0.23.1",
+    "html-webpack-plugin": "^2.22.0",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.1",
+    "webpack-validator": "^2.2.7"
+  },
+  "dependencies": {
+    "react": "^15.3.0"
+  }
+}
