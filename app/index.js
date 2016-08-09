@@ -1,5 +1,6 @@
-// import React from 'react';
-require('scss/main.scss');
+import React from 'react';
+import { render } from 'react-dom';
 
-var component = require('./component');
-document.body.appendChild(component());
+import AppTemplate from 'app/AppTemplate';
+
+render(<AppTemplate />, document.getElementById('app'));
