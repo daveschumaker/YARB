@@ -6,53 +6,80 @@ const validate = require('webpack-validator');
 const parts = require('./lib/parts');
 
 const PATHS = {
-  app: path.join(__dirname, 'app'),
-  build: path.join(__dirname, 'build')
+    app: path.join(__dirname, 'app'),
+    build: path.join(__dirname, 'build'),
+    scss: path.join(__dirname, 'scss')
 };
 
 const common = {
-  entry: {
-    app: PATHS.app
-  },
-  output: {
-    path: PATHS.build,
-    filename: '[name].js'
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Webpack demo'
-    })
-  ]
-};
-
-var config;
-
-// Detect how npm is run and branch based on that
-switch(process.env.npm_lifecycle_event) {
-  case 'build':
-      config = merge(
-        common,
-        // {
-        //     devtool: 'cheap-eval-source-map',
-        // },
-        parts.minify(),
-        parts.setupCSS(PATHS.app)
-      );
-    break;
-  default:
-      config = merge(
-        common,
-        {
-            devtool: 'source-map'
-        },
-        parts.minify(),
-        parts.setupCSS(PATHS.app),
-        parts.devServer({
-          // Customize host/port here if needed
-          host: process.env.HOST,
-          port: process.env.PORT
+    entry: {
+        app: PATHS.app
+    },
+    output: {
+        path: PATHS.build,
+        filename: '[name].js'
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'YARB - Yet Another React Boilerplate'
         })
-      );
-}
+    ],
+    resolve: {
+        root: path.join(__dirname),
+        extensions: ['', '.js', '.jsx'],
+        alias: {
+            'app': 'app',
+            'config': 'config',
+            'images': 'app/images',
+            'scss': 'scss',
+            'test': ' test'
+        }
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                // Enable caching for improved performance during development
+                // It uses default OS directory by default. If you need
+                // something more custom, pass a path to it.
+                // I.e., babel?cacheDirectory=<path>
+                loaders: ['babel?cacheDirectory'],
+                // Parse only app files! Without this it will go through
+                // the entire project. In addition to being slow,
+                // that will most likely result in an error.
+                include: PATHS.app
+            }]
+        }
+    }
 
-module.exports = validate(config);
+    var config;
+    
+    // Detect how npm is run and branch based on that
+    switch(process.env.npm_lifecycle_event) {
+        case 'build':
+        config = merge(
+            common,
+            {
+                // devtool: 'cheap-eval-source-map',
+                devtool: 'source-map'
+            },
+            // parts.minify(),
+            parts.setupCSS(PATHS.app)
+        );
+        break;
+        default:
+        config = merge(
+            common,
+            {
+                devtool: 'source-map'
+            },
+            parts.setupCSS(PATHS.scss),
+            parts.devServer({
+                // Customize host/port here if needed
+                host: process.env.HOST,
+                port: process.env.PORT
+            })
+        );
+    }
+
+    module.exports = validate(config);
