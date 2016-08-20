@@ -1,6 +1,6 @@
 {
   "name": "YARB",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Yet Another React Boilerplate",
   "main": "./app/index.js",
   "scripts": {
@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "lodash": "4.15.0",
-    "react": "15.3.1"
+    "react": "15.3.1",
+    "react-dom": "15.3.1"
   }
 }
