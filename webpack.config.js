@@ -23,9 +23,10 @@ const common = {
     plugins: [
         new CleanPlugin([PATHS.build]),
         new HtmlWebpackPlugin({
+            inject: false,
             title: 'YARB - Yet Another React Boilerplate',
             template: require('html-webpack-template'),
-            appMountId: 'app',
+            appMountId: 'app'
         })
     ],
     resolve: {
