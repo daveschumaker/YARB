@@ -13,6 +13,7 @@ const PATHS = {
 };
 
 const common = {
+    context: PATHS.app,
     entry: {
         app: PATHS.app
     },
@@ -23,10 +24,9 @@ const common = {
     plugins: [
         new CleanPlugin([PATHS.build]),
         new HtmlWebpackPlugin({
-            inject: false,
             title: 'YARB - Yet Another React Boilerplate',
-            template: require('html-webpack-template'),
-            appMountId: 'app'
+            appMountId: 'app',
+            template: PATHS.app + '/templates/index.html'
         })
     ],
     resolve: {
@@ -64,11 +64,7 @@ const common = {
         case 'build':
         config = merge(
             common,
-            {
-                // devtool: 'cheap-eval-source-map',
-                devtool: 'source-map'
-            },
-            // parts.minify(),
+            parts.minify(),
             parts.setupCSS(PATHS.app)
         );
         break;
