@@ -1,46 +1,51 @@
 {
   "name": "YARB",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Yet Another React Boilerplate",
   "main": "./app/index.js",
   "scripts": {
     "build": "npm run webpack",
-    "devserver": "node_modules/.bin/webpack-dev-server",
+    "devserver": "node_modules/.bin/webpack-dev-server --open",
     "start": "npm run devserver",
     "test": "node node_modules/.bin/mocha --recursive",
     "test-watch": "npm test -- --watch",
-    "webpack": "node_modules/.bin/webpack"
+    "webpack": "node node_modules/.bin/webpack"
   },
   "keywords": [
     "boilerplate",
     "react",
+    "sass",
     "webpack"
   ],
   "author": "Dave Schumaker",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daveschumaker/YARB.git"
+  },
   "devDependencies": {
     "autoprefixer-loader": "3.2.0",
-    "babel-core": "6.13.2",
-    "babel-loader": "6.2.5",
-    "babel-plugin-transform-class-properties": "6.11.5",
-    "babel-preset-es2015": "6.13.2",
-    "babel-preset-react": "6.11.1",
+    "babel-core": "6.21.0",
+    "babel-loader": "6.2.10",
+    "babel-plugin-transform-class-properties": "6.19.0",
+    "babel-preset-es2015": "6.18.0",
+    "babel-preset-react": "6.16.0",
     "chai": "3.5.0",
-    "clean-webpack-plugin": "0.1.10",
-    "css-loader": "0.23.1",
-    "html-webpack-plugin": "2.22.0",
-    "mocha": "3.0.2",
-    "node-sass": "3.8.0",
-    "sass-loader": "4.0.0",
+    "clean-webpack-plugin": "0.1.14",
+    "css-loader": "0.26.1",
+    "html-webpack-plugin": "2.24.1",
+    "mocha": "3.2.0",
+    "node-sass": "4.1.0",
+    "sass-loader": "4.1.0",
     "style-loader": "0.13.1",
-    "webpack": "1.13.2",
-    "webpack-dev-server": "1.14.1",
-    "webpack-merge": "0.14.1",
-    "webpack-validator": "2.2.7"
+    "webpack": "1.14.0",
+    "webpack-dev-server": "1.16.2",
+    "webpack-merge": "1.1.2",
+    "webpack-validator": "2.3.0"
   },
   "dependencies": {
-    "lodash": "4.15.0",
-    "react": "15.3.1",
-    "react-dom": "15.3.1"
+    "lodash": "4.17.2",
+    "react": "15.4.1",
+    "react-dom": "15.4.1"
   }
 }
