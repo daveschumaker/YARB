@@ -1,6 +1,9 @@
+// Entry point for app.
+
 import React from 'react';
 import { render } from 'react-dom';
+import AppRoutes from 'app/AppRoutes';
 
-import AppTemplate from 'app/templates/AppTemplate';
-
-render(<AppTemplate />, document.getElementById('app'));
+window.onload = () => {
+    render(<AppRoutes/>, document.getElementById('app'));
+};

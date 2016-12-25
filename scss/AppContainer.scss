@@ -1,14 +1,17 @@
-@import '../_reset.scss';       // Only needs to be included once right here
-@import '../_includes.scss';    // This should be included at top of every scss file.
+@import './includes/_reset.scss';   // Only needs to be included once right here
+@import './_includes.scss';         // This should be included at top of every scss file.
 
 html, body {
     font-size: 16px;
     margin: 0px;
     min-width: 320px;
-    padding: 0px;
 }
 
-.AppTemplate {
+body {
+    padding: 10px;
+}
+
+.AppContainer {
     background: $white;
     height: 100%;
     width: 100%;

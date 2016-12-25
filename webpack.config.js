@@ -26,7 +26,7 @@ const common = {
         new HtmlWebpackPlugin({
             title: 'YARB - Yet Another React Boilerplate',
             appMountId: 'app',
-            template: PATHS.app + '/templates/index.html'
+            template: PATHS.app + '/static/index.html'
         })
     ],
     resolve: {
