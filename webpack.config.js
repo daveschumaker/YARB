@@ -64,8 +64,11 @@ const common = {
         case 'build':
         config = merge(
             common,
-            parts.minify(),
-            parts.setupCSS(PATHS.app)
+            {
+                devtool: 'cheap-module-source-map'
+            },
+            parts.setupCSS(PATHS.scss),
+            parts.minify()
         );
         break;
         default:

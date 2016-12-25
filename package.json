@@ -4,12 +4,11 @@
   "description": "Yet Another React Boilerplate",
   "main": "./app/index.js",
   "scripts": {
-    "build": "npm run webpack",
+    "build": "node node_modules/.bin/webpack",
     "devserver": "node_modules/.bin/webpack-dev-server --open",
     "start": "npm run devserver",
     "test": "node node_modules/.bin/mocha --recursive",
-    "test-watch": "npm test -- --watch",
-    "webpack": "node node_modules/.bin/webpack"
+    "test-watch": "npm test -- --watch"
   },
   "keywords": [
     "boilerplate",
