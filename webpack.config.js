@@ -65,7 +65,7 @@ const common = {
         config = merge(
             common,
             parts.minify(),
-            parts.setupCSS(PATHS.app)
+            parts.setupCSS(PATHS.scss)
         );
         break;
         default:
