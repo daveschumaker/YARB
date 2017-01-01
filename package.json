@@ -33,7 +33,7 @@
     "chai": "3.5.0",
     "clean-webpack-plugin": "0.1.14",
     "css-loader": "0.26.1",
-    "html-webpack-plugin": "2.24.1",
+    "html-webpack-plugin": "2.25.0",
     "mocha": "3.2.0",
     "node-sass": "4.1.1",
     "sass-loader": "4.1.1",
@@ -44,7 +44,7 @@
     "webpack-validator": "2.3.0"
   },
   "dependencies": {
-    "lodash": "4.17.3",
+    "lodash": "4.17.4",
     "react": "15.4.1",
     "react-dom": "15.4.1"
   }
