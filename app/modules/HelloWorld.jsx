@@ -10,4 +10,4 @@ class HelloWorld extends React.Component {
     }
 }
 
-module.exports = HelloWorld;
+export default HelloWorld;
